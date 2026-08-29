@@ -1,3 +1,5 @@
+Warning: This builds are only for x64 devices like Android emulators. Most Android users should use [arm64 builds](https://github.com/andrewginns/chromium-browser-snapshots-AndroidDesktop_arm64/releases).
+
 Publishing the latest official APKs from https://commondatastorage.googleapis.com/chromium-browser-snapshots/index.html?prefix=AndroidDesktop_x64/
 - Automates the process of checking, unzipping, and publishing releases of the latest .apk file
 
