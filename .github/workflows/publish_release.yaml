@@ -19,7 +19,7 @@ jobs:
       - name: Download LAST_CHANGE and get version
         id: get_version
         run: |
-          curl -Lfso LAST_CHANGE "https://www.googleapis.com/download/storage/v1/b/chromium-browser-snapshots/o/AndroidDesktop_arm64%2FLAST_CHANGE?alt=media"
+          curl -Lfso LAST_CHANGE "https://www.googleapis.com/download/storage/v1/b/chromium-browser-snapshots/o/AndroidDesktop_x64%2FLAST_CHANGE?alt=media"
           VERSION=$(cat LAST_CHANGE)
           echo "VERSION=$VERSION" >> $GITHUB_ENV
           echo "version_tag=$VERSION" >> $GITHUB_OUTPUT
@@ -40,7 +40,7 @@ jobs:
       - name: Download Snapshot Zip
         if: steps.check_release.outputs.exists == 'false'
         run: |
-          SNAPSHOT_URL="https://www.googleapis.com/download/storage/v1/b/chromium-browser-snapshots/o/AndroidDesktop_arm64%2F${{ env.VERSION }}%2Fchrome-android-desktop.zip?alt=media"
+          SNAPSHOT_URL="https://www.googleapis.com/download/storage/v1/b/chromium-browser-snapshots/o/AndroidDesktop_x64%2F${{ env.VERSION }}%2Fchrome-android-desktop.zip?alt=media"
           echo "Downloading $SNAPSHOT_URL"
           curl -Lfso chrome-android-desktop.zip "$SNAPSHOT_URL"
 
